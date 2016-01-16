@@ -150,7 +150,7 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
         throw std::runtime_error("invalid checksum");
     }
 
-    return Address(version, scanKey, spendKeys, prefix, signatures, options);
+    return Address(scanKey, spendKeys, signatures, prefix, options, version);
 }
 
 

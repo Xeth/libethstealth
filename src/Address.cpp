@@ -4,27 +4,16 @@
 namespace Stealth{
 
 
-
-//Address::Address(const Key &key, const Data &prefix, size_t signatures, uint8_t options, uint8_t version) :
-//    _scanKey(key.getScanPubKey()),
-//    _spendKeys(key.getSpendPubKeys()),
-//    _version(version),
-//    _signatures(signatures ? signatures : _spendKeys.size()),
-//    _options(options),
-//    _prefix(prefix)
-//{}
-
-
-Address::Address(uint8_t version, const PubKey &scanKey, const std::vector<PubKey> &spendKeys, const Data &prefix, size_t signatures, uint8_t options) : 
+Address::Address(const PubKey &scanKey, const std::vector<PubKey> &spendKeys, size_t signatures, const Data &prefix, uint8_t options, uint8_t version) : 
     _scanKey(scanKey),
     _spendKeys(spendKeys),
     _version(version),
-    _signatures(signatures ? signatures : _spendKeys.size()),
+    _signatures(signatures && signatures < _spendKeys.size() ? signatures : _spendKeys.size()),
     _options(options),
     _prefix(prefix)
 {}
 
-Address::Address(uint8_t version, const PubKey &scanKey, const PubKey &spendKey, const Data &prefix, uint8_t options) :
+Address::Address(const PubKey &scanKey, const PubKey &spendKey, const Data &prefix, uint8_t options, uint8_t version) :
     _scanKey(scanKey),
     _version(version),
     _signatures(1),
@@ -33,6 +22,16 @@ Address::Address(uint8_t version, const PubKey &scanKey, const PubKey &spendKey,
 {
     _spendKeys.push_back(spendKey);
 }
+
+Address::Address(const PubKey &scanKey, const PubKey &spendKey, uint8_t version) :
+    _scanKey(scanKey),
+    _version(version),
+    _signatures(1),
+    _options(0)
+{
+    _spendKeys.push_back(spendKey);
+}
+
 
 
 

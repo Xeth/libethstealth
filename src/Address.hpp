@@ -4,7 +4,7 @@
 
 #include "bitcrypto/Data.hpp"
 #include "bitcrypto/PubKey.hpp"
-//#include "Key.hpp"
+#include "Key.hpp"
 
 
 
@@ -14,39 +14,43 @@ namespace Stealth{
 using BitCrypto::Data;
 using BitCrypto::PubKey;
 
+#define DEFAULT_VERSION 0x80
 
 
 class Address
 {
     public:
 
-//        Address
-//        (
-//            const Key &, 
-//            const Data &prefix=Data(),
-//            size_t signatures = 0, 
-//            uint8_t options = 0,
-//            uint8_t version=DEFAULT_VERSION
-//        );
-
+        template<class Cipher>
         Address
         (
-            uint8_t version,
-            const PubKey &scanKey, 
-            const std::vector<PubKey> &scanKeys, 
-            const Data &prefix=Data(), 
-            size_t signatures = 0, 
-            uint8_t options = 0
+            const Key<Cipher> &, 
+            size_t signatures = 0,
+            const Data &prefix=Data(),
+            uint8_t options = 0,
+            uint8_t version=DEFAULT_VERSION
         );
 
         Address
         (
-            uint8_t version,
+            const PubKey &scanKey, 
+            const std::vector<PubKey> &spendKeys,  
+            size_t signatures = 0, 
+            const Data &prefix=Data(),
+            uint8_t options = 0,
+            uint8_t version = DEFAULT_VERSION
+        );
+
+        Address
+        (
             const PubKey &scanKey,
             const PubKey &spendKey,
             const Data &prefix=Data(),
-            uint8_t options = 0
+            uint8_t options = 0,
+            uint8_t version = DEFAULT_VERSION
         );
+
+        Address(const PubKey &scanKey, const PubKey &spendKey, uint8_t version = DEFAULT_VERSION);
 
         uint8_t getVersion() const;
         uint8_t getOptions() const;
@@ -67,3 +71,5 @@ class Address
 
 
 }
+
+#include "Address.ipp"
