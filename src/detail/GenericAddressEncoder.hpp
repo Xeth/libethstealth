@@ -1,11 +1,19 @@
 #pragma once 
 
-#include "Data.hpp"
+#include "bitcrypto/Data.hpp"
+#include "bitcrypto/DoubleSha256CheckSum.hpp"
+#include "bitcrypto/serialization/BinaryPubKeySerializer.hpp"
+#include "bitcrypto/encoding/Base58Encoder.hpp"
+
 #include "Address.hpp"
-#include "DoubleSha256CheckSum.hpp"
+
 
 
 namespace Stealth{
+
+
+using namespace BitCrypto;
+
 
 
 template<class Encoder>
@@ -17,6 +25,7 @@ class GenericAddressEncoder
         Address decode(const std::string &) const;
 
 };
+
 
 
 }

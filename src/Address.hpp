@@ -2,13 +2,17 @@
 
 #include <stdint.h>
 
-#include "Data.hpp"
-#include "PubKey.hpp"
+#include "bitcrypto/Data.hpp"
+#include "bitcrypto/PubKey.hpp"
 //#include "Key.hpp"
 
 
 
 namespace Stealth{
+
+
+using BitCrypto::Data;
+using BitCrypto::PubKey;
 
 
 
