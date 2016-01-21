@@ -2,7 +2,7 @@
 
 #include "bitcrypto/Data.hpp"
 #include "bitcrypto/DoubleSha256CheckSum.hpp"
-#include "bitcrypto/serialization/BinaryPubKeySerializer.hpp"
+#include "bitcrypto/serialization/BinaryPublicKeySerializer.hpp"
 #include "bitcrypto/encoding/Base58Encoder.hpp"
 
 #include "Address.hpp"

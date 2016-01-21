@@ -6,11 +6,11 @@ template<class Encoder>
 std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
 {
     size_t dataSize = 42;
-    const std::vector<PubKey> & spendKeys = address.getSpendKeys();
-    const PubKey & scanKey = address.getScanKey();
+    const std::vector<PublicKey> & spendKeys = address.getSpendKeys();
+    const PublicKey & scanKey = address.getScanKey();
     const Data &prefix = address.getPrefix();
 
-    for(std::vector<PubKey>::const_iterator it = spendKeys.begin(), end = spendKeys.end();  it != end; ++it)
+    for(std::vector<PublicKey>::const_iterator it = spendKeys.begin(), end = spendKeys.end();  it != end; ++it)
     {
         dataSize += 33;
     }
@@ -31,7 +31,7 @@ std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
     
 
     CompressedPoint point;
-    BinaryPubKeySerializer serializer;
+    BinaryPublicKeySerializer serializer;
 
     serializer.serialize(scanKey, point);
 
@@ -44,7 +44,7 @@ std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
 
     for(int i=0; i<spendKeys.size(); i++)
     {
-        const PubKey & spendKey = spendKeys[i];
+        const PublicKey & spendKey = spendKeys[i];
         serializer.serialize(spendKey, point);
 
         std::copy(point.begin(), point.end(), it);
@@ -84,8 +84,8 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
         throw std::runtime_error("invalid stealth address");
     }
 
-    BinaryPubKeySerializer serializer;
-    std::vector<PubKey> spendKeys;
+    BinaryPublicKeySerializer serializer;
+    std::vector<PublicKey> spendKeys;
     Data prefix;
 
     uint8_t signatures, version, options, prefixSize, spendKeysCount;
@@ -98,7 +98,7 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
     ++it;
 
 
-    PubKey scanKey = serializer.unserialize(it, it+33);
+    PublicKey scanKey = serializer.unserialize(it, it+33);
     it += 33;
 
     spendKeysCount = *it;

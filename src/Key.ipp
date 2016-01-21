@@ -2,7 +2,7 @@ namespace Stealth{
 
 
 template<class Cipher>
-Key<Cipher>::Key(const ScanSecret &scanKey,  const PubKey &scanPub, const SpendSecretCollection &spendKeys, const PubKeyCollection &spendPub) :
+Key<Cipher>::Key(const ScanSecret &scanKey,  const PublicKey &scanPub, const SpendSecretCollection &spendKeys, const PublicKeyCollection &spendPub) :
     _scanKey(scanKey),
     _scanPub(scanPub),
     _spendKeys(spendKeys),
@@ -11,7 +11,7 @@ Key<Cipher>::Key(const ScanSecret &scanKey,  const PubKey &scanPub, const SpendS
 
 
 template<class Cipher>
-Key<Cipher>::Key(const ScanSecret &scanKey, const PubKey &scanPub, const SpendSecret &spendKey, const PubKey &spendPub) :
+Key<Cipher>::Key(const ScanSecret &scanKey, const PublicKey &scanPub, const SpendSecret &spendKey, const PublicKey &spendPub) :
     _scanKey(scanKey),
     _scanPub(scanPub)
 {
@@ -21,30 +21,30 @@ Key<Cipher>::Key(const ScanSecret &scanKey, const PubKey &scanPub, const SpendSe
 
 
 template<class Cipher>
-const PubKey & Key<Cipher>::getScanPubKey() const
+const PublicKey & Key<Cipher>::getScanPublicKey() const
 {
     return _scanPub;
 }
 
 
 template<class Cipher>
-const typename Key<Cipher>::PubKeyCollection & Key<Cipher>::getSpendPubKeys() const
+const typename Key<Cipher>::PublicKeyCollection & Key<Cipher>::getSpendPublicKeys() const
 {
     return _spendPub;
 }
 
 
 template<class Cipher>
-const Secret & Key<Cipher>::getScanKey() const
+const typename Key<Cipher>::ScanSecret & Key<Cipher>::getScanPrivateKey() const
 {
     return _scanKey;
 }
 
 
 template<class Cipher>
-const typename Key<Cipher>::SpendSecretCollection & Key<Cipher>::getSpendKeys() const
+const typename Key<Cipher>::SpendSecretCollection & Key<Cipher>::getSpendPrivateKeys() const
 {
-    return _spendPub;
+    return _spendKeys;
 }
 
 

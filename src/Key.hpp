@@ -1,24 +1,26 @@
 #pragma once 
 
-#include "bitcrypto/Secret.hpp"
-#include "bitcrypto/SecuredSecret.hpp"
-#include "bitcrypto/PubKey.hpp"
+#include "bitcrypto/PrivateKey.hpp"
+#include "bitcrypto/SecuredPrivateKey.hpp"
+#include "bitcrypto/PublicKey.hpp"
 
 
 namespace Stealth{
 
 
-using namespace BitCrypto;
+using BitCrypto::PublicKey;
+using BitCrypto::PrivateKey;
+using BitCrypto::SecuredPrivateKey;
 
 
 template<class Cipher>
 class Key
 {
     public:
-        typedef SecuredSecret<Cipher> SpendSecret;
-        typedef Secret ScanSecret;
+        typedef SecuredPrivateKey<Cipher> SpendSecret;
+        typedef PrivateKey ScanSecret;
 
-        typedef std::vector<PubKey> PubKeyCollection;
+        typedef std::vector<PublicKey> PublicKeyCollection;
         typedef std::vector<SpendSecret> SpendSecretCollection;
 
     public:
@@ -26,31 +28,31 @@ class Key
         Key
         (
             const ScanSecret &scanKey, 
-            const PubKey &scanPub, 
+            const PublicKey &scanPub, 
             const SpendSecretCollection &spendKeys, 
-            const PubKeyCollection &spendPub
+            const PublicKeyCollection &spendPub
         );
 
         Key
         (
             const ScanSecret &scanKey,
-            const PubKey &scanPub,
+            const PublicKey &scanPub,
             const SpendSecret &spendKey,
-            const PubKey &spendPub
+            const PublicKey &spendPub
         );
 
-        const PubKey & getScanPubKey() const;
-        const PubKeyCollection & getSpendPubKeys() const;
-        const Secret & getScanKey() const;
+        const PublicKey & getScanPublicKey() const;
+        const PublicKeyCollection & getSpendPublicKeys() const;
+        const ScanSecret & getScanPrivateKey() const;
 
-        const SpendSecretCollection & getSpendKeys() const;
+        const SpendSecretCollection & getSpendPrivateKeys() const;
 
 
     private:
         ScanSecret  _scanKey;
-        PubKey  _scanPub;
+        PublicKey  _scanPub;
         SpendSecretCollection _spendKeys;
-        PubKeyCollection  _spendPub;
+        PublicKeyCollection  _spendPub;
 };
 
 
