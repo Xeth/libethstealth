@@ -2,17 +2,17 @@
 
 #include <stdint.h>
 
-#include "bitcrypto/Data.hpp"
-#include "bitcrypto/PublicKey.hpp"
+#include "ethkey/Data.hpp"
+#include "ethkey/PublicKey.hpp"
 #include "Key.hpp"
 
 
 
-namespace Stealth{
+namespace Ethereum {namespace Stealth{
 
 
-using BitCrypto::Data;
-using BitCrypto::PublicKey;
+using Ethereum::Data;
+using Ethereum::PublicKey;
 
 #define DEFAULT_VERSION 0x80
 
@@ -70,6 +70,6 @@ class Address
 };
 
 
-}
+}}
 
 #include "Address.ipp"

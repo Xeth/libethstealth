@@ -2,8 +2,8 @@
 
 #include "detail/GenericAddressEncoder.hpp"
 
-namespace Stealth{
+namespace Ethereum{namespace Stealth{
 
 typedef GenericAddressEncoder<Base58Encoder> Base58AddressEncoder;
 
-}
+}}

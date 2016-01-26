@@ -1,12 +1,13 @@
 
 #include <boost/test/unit_test.hpp>
 
-#include "bitcrypto/serialization/Base16PublicKeySerializer.hpp"
+#include "ethkey/serialization/Base16PublicKeySerializer.hpp"
 #include "Address.hpp"
 #include "Base58AddressEncoder.hpp"
 
-using namespace Stealth;
-using namespace BitCrypto;
+using namespace Ethereum;
+using namespace Ethereum::Stealth;
+
 
 BOOST_AUTO_TEST_SUITE(AddressEncodingTest)
 

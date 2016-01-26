@@ -1,16 +1,16 @@
 #pragma once 
 
-#include "bitcrypto/PrivateKey.hpp"
-#include "bitcrypto/SecuredPrivateKey.hpp"
-#include "bitcrypto/PublicKey.hpp"
+#include "ethkey/PrivateKey.hpp"
+#include "ethkey/SecuredPrivateKey.hpp"
+#include "ethkey/PublicKey.hpp"
 
 
-namespace Stealth{
+namespace Ethereum{namespace Stealth{
 
 
-using BitCrypto::PublicKey;
-using BitCrypto::PrivateKey;
-using BitCrypto::SecuredPrivateKey;
+using Ethereum::PublicKey;
+using Ethereum::PrivateKey;
+using Ethereum::SecuredPrivateKey;
 
 
 template<class Cipher>
@@ -56,6 +56,6 @@ class Key
 };
 
 
-}
+}}
 
 #include "Key.ipp"

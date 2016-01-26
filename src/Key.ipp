@@ -1,4 +1,4 @@
-namespace Stealth{
+namespace Ethereum{ namespace Stealth{
 
 
 template<class Cipher>
@@ -48,4 +48,4 @@ const typename Key<Cipher>::SpendSecretCollection & Key<Cipher>::getSpendPrivate
 }
 
 
-}
+}}

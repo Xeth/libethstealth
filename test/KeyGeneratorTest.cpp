@@ -1,23 +1,23 @@
 
 #include <boost/test/unit_test.hpp>
 
-#include "bitcrypto/cipher/DummyCipher.hpp"
-#include "bitcrypto/SignatureValidator.hpp"
-#include "bitcrypto/Sha256.hpp"
-#include "bitcrypto/Signer.hpp"
-#include "bitcrypto/Literal.hpp"
+#include "ethkey/cipher/DummyCipher.hpp"
+#include "ethkey/SignatureValidator.hpp"
+#include "ethkey/Sha256.hpp"
+#include "ethkey/Signer.hpp"
+#include "ethkey/Literal.hpp"
 
 #include "KeyGenerator.hpp"
 
-using namespace Stealth;
-using BitCrypto::DummyCipher;
-using BitCrypto::DummyKey;
-using BitCrypto::SignatureValidator;
-using BitCrypto::Sha256;
-using BitCrypto::Data;
-using BitCrypto::Signer;
-using BitCrypto::Signature;
-using BitCrypto::Literal;
+using namespace Ethereum::Stealth;
+using Ethereum::DummyCipher;
+using Ethereum::DummyKey;
+using Ethereum::SignatureValidator;
+using Ethereum::Sha256;
+using Ethereum::Data;
+using Ethereum::Signer;
+using Ethereum::Signature;
+using Ethereum::Literal;
 
 BOOST_AUTO_TEST_SUITE(KeyGeneratorTest)
 

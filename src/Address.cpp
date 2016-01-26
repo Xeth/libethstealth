@@ -1,7 +1,7 @@
 #include "Address.hpp"
 
 
-namespace Stealth{
+namespace Ethereum{ namespace Stealth{
 
 
 Address::Address(const PublicKey &scanKey, const std::vector<PublicKey> &spendKeys, size_t signatures, const Data &prefix, uint8_t options, uint8_t version) : 
@@ -68,4 +68,4 @@ const std::vector<PublicKey> & Address::getSpendKeys() const
 
 
 
-}
+}}

@@ -8,6 +8,6 @@ endif()
 
 if( DEFINED PKGCONFIG_DIR)
   MESSAGE("PKG CONFIG FOUND")
-  CONFIGURE_FILE("cmake/pkg-config.conf" "stealthaddress.pc" @ONLY)
-  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/stealthaddress.pc" DESTINATION "${CMAKE_INSTALL_PREFIX}/${PKGCONFIG_DIR}")
+  CONFIGURE_FILE("cmake/pkg-config.conf" "ethstealth.pc" @ONLY)
+  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/ethstealth.pc" DESTINATION "${CMAKE_INSTALL_PREFIX}/${PKGCONFIG_DIR}")
 endif()

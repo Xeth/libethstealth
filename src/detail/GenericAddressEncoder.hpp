@@ -1,18 +1,18 @@
 #pragma once 
 
-#include "bitcrypto/Data.hpp"
-#include "bitcrypto/DoubleSha256CheckSum.hpp"
-#include "bitcrypto/serialization/BinaryPublicKeySerializer.hpp"
-#include "bitcrypto/encoding/Base58Encoder.hpp"
+#include "ethkey/Data.hpp"
+#include "ethkey/DoubleSha256CheckSum.hpp"
+#include "ethkey/serialization/BinaryPublicKeySerializer.hpp"
+#include "ethkey/encoding/Base58Encoder.hpp"
 
 #include "Address.hpp"
 
 
 
-namespace Stealth{
+namespace Ethereum{ namespace Stealth{
 
 
-using namespace BitCrypto;
+using namespace Ethereum;
 
 
 
@@ -28,6 +28,6 @@ class GenericAddressEncoder
 
 
 
-}
+}}
 
 #include "GenericAddressEncoder.ipp"

@@ -1,5 +1,5 @@
 
-namespace Stealth{
+namespace Ethereum{namespace Stealth{
 
 
 template<class Encoder>
@@ -154,4 +154,4 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
 }
 
 
-}
+}}

@@ -1,7 +1,7 @@
 #include "SharedSecretFactory.hpp"
 
 
-namespace Stealth{
+namespace Ethereum{namespace Stealth{
 
 
 SharedSecret SharedSecretFactory::createFromScanPublic(const PublicKey &scan, const PrivateKey &ephemeral) const
@@ -27,4 +27,5 @@ SharedSecret SharedSecretFactory::create(const PublicKey &scanOrEphemeral, const
     return sharedSecret;
 }
 
-}
+
+}}

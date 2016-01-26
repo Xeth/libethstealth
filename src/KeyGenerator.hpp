@@ -1,18 +1,18 @@
 #pragma once 
 
-#include "bitcrypto/KeyGenerator.hpp"
+#include "ethkey/KeyGenerator.hpp"
 #include "Key.hpp"
 
 
-namespace Stealth{
+namespace Ethereum{namespace Stealth{
 
 
-using BitCrypto::Data;
-using BitCrypto::PublicKey;
-using BitCrypto::PrivateKey;
-using BitCrypto::SecuredPrivateKey;
-using BitCrypto::KeyPair;
-using BitCrypto::SecuredKeyPair;
+using Ethereum::Data;
+using Ethereum::PublicKey;
+using Ethereum::PrivateKey;
+using Ethereum::SecuredPrivateKey;
+using Ethereum::KeyPair;
+using Ethereum::SecuredKeyPair;
 
 
 class KeyGenerator
@@ -34,11 +34,11 @@ class KeyGenerator
         void checkSpendKeysCount(size_t);
 
     private:
-        BitCrypto::KeyGenerator _generator;
+        Ethereum::KeyGenerator _generator;
 };
 
 
-}
+}}
 
 
 #include "KeyGenerator.ipp"

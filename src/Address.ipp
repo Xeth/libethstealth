@@ -1,5 +1,5 @@
 
-namespace Stealth{
+namespace Ethereum{ namespace Stealth{
 
 
 template<class Cipher>
@@ -13,4 +13,4 @@ Address::Address(const Key<Cipher> &key, size_t signatures, const Data &prefix, 
 {}
 
 
-}
+}}

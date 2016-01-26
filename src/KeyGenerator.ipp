@@ -1,4 +1,4 @@
-namespace Stealth{
+namespace Ethereum{namespace Stealth{
 
 
 template<class Cipher, class CipherKey>
@@ -74,4 +74,4 @@ inline void KeyGenerator::checkSpendKeysCount(size_t count)
 }
 
 
-}
+}}

@@ -3,9 +3,9 @@
 #include <boost/array.hpp>
 
 
-namespace Stealth{
+namespace Ethereum{namespace Stealth{
 
 
 typedef boost::array<unsigned char, 32> SharedSecret;
 
-}
+}}

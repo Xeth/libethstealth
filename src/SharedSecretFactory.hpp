@@ -1,23 +1,23 @@
 #pragma once 
 
-#include "bitcrypto/PublicKey.hpp"
-#include "bitcrypto/PrivateKey.hpp"
-#include "bitcrypto/Sha256.hpp"
-#include "bitcrypto/serialization/BinaryPublicKeySerializer.hpp"
+#include "ethkey/PublicKey.hpp"
+#include "ethkey/PrivateKey.hpp"
+#include "ethkey/Sha256.hpp"
+#include "ethkey/serialization/BinaryPublicKeySerializer.hpp"
 
 
 #include "Key.hpp"
 #include "SharedSecret.hpp"
 
 
-namespace Stealth{
+namespace Ethereum{namespace Stealth{
 
 
-using BitCrypto::PublicKey;
-using BitCrypto::PrivateKey;
-using BitCrypto::Sha256;
-using BitCrypto::BinaryPublicKeySerializer;
-using BitCrypto::CompressedPoint;
+using Ethereum::PublicKey;
+using Ethereum::PrivateKey;
+using Ethereum::Sha256;
+using Ethereum::BinaryPublicKeySerializer;
+using Ethereum::CompressedPoint;
 
 
 class SharedSecretFactory
@@ -30,4 +30,4 @@ class SharedSecretFactory
 };
 
 
-}
+}}
