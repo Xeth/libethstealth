@@ -6,6 +6,12 @@
 namespace Ethereum{namespace Stealth{
 
 
-typedef boost::array<unsigned char, 32> SharedSecret;
+class SharedSecret : public boost::array<unsigned char, 32>
+{
+    public:
+        unsigned char * operator & ();
+        const unsigned char * operator & () const;
+};
+
 
 }}
