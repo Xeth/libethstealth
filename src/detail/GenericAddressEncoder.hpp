@@ -12,8 +12,10 @@
 namespace Ethereum{ namespace Stealth{
 
 
-using namespace Ethereum;
-
+using Ethereum::Data;
+using Ethereum::DoubleSha256CheckSum;
+using Ethereum::BinaryPublicKeySerializer;
+using Ethereum::Base58Encoder;
 
 
 template<class Encoder>
