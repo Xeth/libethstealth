@@ -2,6 +2,7 @@ find_package(Boost COMPONENTS system REQUIRED)
 
 
 include(${CMAKE_SOURCE_DIR}/cmake/libethkey.cmake)
+include (${CMAKE_SOURCE_DIR}/cmake/cryptopp.cmake)
 
 IF(ETHKEY_FOUND)
     MESSAGE(STATUS "EthKey - found")
@@ -11,7 +12,7 @@ ENDIF(ETHKEY_FOUND)
 
 #add_definitions(-D__DEBUG__)
 
-include_directories(${ETHKEY_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${CRYPTOPP_INCLUDE_PATH} ${ETHKEY_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 
 file(GLOB SOURCES 

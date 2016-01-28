@@ -5,10 +5,9 @@ file(GLOB TEST_SOURCES
 )
 
 
-include_directories(${ETHKEY_INCLUDE_PATH})
-include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(${CRYPTOPP_INCLUDE_PATH} ${ETHKEY_INCLUDE_PATH} ${CMAKE_SOURCE_DIR}/src)
 
 add_executable(unit-tests ${TEST_SOURCES})
 add_dependencies(unit-tests ethstealth)
 
-target_link_libraries(unit-tests ethstealth ${ETHKEY_LIBRARY} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${Boost_RANDOM_LIBRARY} gmp)
+target_link_libraries(unit-tests ethstealth ${ETHKEY_LIBRARY} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${Boost_RANDOM_LIBRARY} ${CRYPTOPP_LIBRARY} gmp)
