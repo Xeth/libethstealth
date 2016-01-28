@@ -1,9 +1,9 @@
 
 IF (WIN32)
-    FIND_PATH(ETHKEY_INCLUDE_PATH ethkey/Key.hpp
+    FIND_PATH(ETHKEY_INCLUDE_PATH ethkey/KeyPair.hpp
         $ENV{ETHKEY_INCLUDE_PATH}
         $ENV{PROGRAMFILES}/ethkey
-        DOC "The directory where ethkey/Key.hpp resides")
+        DOC "The directory where ethkey/KeyPair.hpp resides")
     FIND_LIBRARY(ETHKEY_LIBRARY
         NAMES ethkey
         PATHS
@@ -11,13 +11,13 @@ IF (WIN32)
         $ENV{PROGRAMFILES}/ethkey
         DOC "The ethkey library")
 ELSE (WIN32)
-    FIND_PATH(ETHKEY_INCLUDE_PATH ethkey/Key.hpp
+    FIND_PATH(ETHKEY_INCLUDE_PATH ethkey/KeyPair.hpp
         $ENV{ETHKEY_INCLUDE_PATH}
         /usr/local/include
         /usr/include
         /sw/include
         /opt/local/include
-        DOC "The directory where libethkey/Key.hpp resides")
+        DOC "The directory where libethkey/KeyPair.hpp resides")
     FIND_LIBRARY(ETHKEY_LIBRARY
         NAMES ethkey
         PATHS
