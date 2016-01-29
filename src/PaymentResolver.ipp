@@ -25,10 +25,10 @@ bool PaymentResolver<Key>::uncover(const Ethereum::Address &address, const Publi
         return false;
     }
 
-    _secretFactory.createFromScanPrivate(key.getScanPrivateKey(), ephem, secret);
+    secret = _secretFactory.createFromScanSecret(_key.getScanPrivateKey(), ephem);
     PublicKey secretPub = _pubkeyFactory.createFromSecret(secret);
 
-    if(address == Ethereum::Address(spend[spendIndex] + secretPub))
+    if(address == Ethereum::Address(spends[spendIndex] + secretPub))
     {
         return true;
     }
