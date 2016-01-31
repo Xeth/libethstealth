@@ -30,10 +30,8 @@ std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
     ++it;
     
 
-    CompressedPoint point;
-    BinaryPublicKeySerializer serializer;
-
-    serializer.serialize(scanKey, point);
+    PublicKeySerializer serializer;
+    CompressedPoint point = serializer.toCompressedPoint(scanKey);
 
     std::copy(point.begin(), point.end(), it);
 
@@ -45,9 +43,8 @@ std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
     for(int i=0; i<spendKeys.size(); i++)
     {
         const PublicKey & spendKey = spendKeys[i];
-        serializer.serialize(spendKey, point);
-
-        std::copy(point.begin(), point.end(), it);
+        CompressedPoint spendKeyPoint = serializer.toCompressedPoint(spendKey);
+        std::copy(spendKeyPoint.begin(), spendKeyPoint.end(), it);
         it += 33;
     }
 
@@ -84,7 +81,7 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
         throw std::runtime_error("invalid stealth address");
     }
 
-    BinaryPublicKeySerializer serializer;
+    PublicKeySerializer serializer;
     std::vector<PublicKey> spendKeys;
     Data prefix;
 
@@ -98,7 +95,7 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
     ++it;
 
 
-    PublicKey scanKey = serializer.unserialize(it, it+33);
+    PublicKey scanKey = serializer.fromPoint(it, it+33);
     it += 33;
 
     spendKeysCount = *it;
@@ -115,7 +112,7 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
 
     for(int i=0; i<spendKeysCount; i++)
     {
-        spendKeys[i] = serializer.unserialize(it, it+33);
+        spendKeys[i] = serializer.fromPoint(it, it+33);
         it += 33;
     }
 

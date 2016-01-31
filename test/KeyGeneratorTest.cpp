@@ -3,7 +3,7 @@
 
 #include "ethkey/cipher/DummyCipher.hpp"
 #include "ethkey/SignatureValidator.hpp"
-#include "ethkey/Sha256.hpp"
+#include "ethkey/hash/Sha256.hpp"
 #include "ethkey/Signer.hpp"
 #include "ethkey/Literal.hpp"
 

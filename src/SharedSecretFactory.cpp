@@ -20,8 +20,8 @@ SharedSecret SharedSecretFactory::create(const PublicKey &scanOrEphemeral, const
 {
     SharedSecret sharedSecret;
     PublicKey sharedPub = scanOrEphemeral + ephemeralOrScan;
-    BinaryPublicKeySerializer serializer;
-    CompressedPoint point = serializer.serialize<CompressedPoint>(sharedPub);
+    PublicKeySerializer serializer;
+    CompressedPoint point = serializer.toCompressedPoint(sharedPub);
     Sha256 hasher;
     hasher.hash(point.begin(), point.end(), sharedSecret.begin());
     return sharedSecret;

@@ -2,7 +2,7 @@
 
 #include "ethkey/Data.hpp"
 #include "ethkey/DoubleSha256CheckSum.hpp"
-#include "ethkey/serialization/BinaryPublicKeySerializer.hpp"
+#include "ethkey/serialization/PublicKeySerializer.hpp"
 #include "ethkey/encoding/Base58Encoder.hpp"
 
 #include "Address.hpp"

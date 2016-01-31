@@ -2,8 +2,8 @@
 
 #include "ethkey/PublicKey.hpp"
 #include "ethkey/PrivateKey.hpp"
-#include "ethkey/Sha256.hpp"
-#include "ethkey/serialization/BinaryPublicKeySerializer.hpp"
+#include "ethkey/hash/Sha256.hpp"
+#include "ethkey/serialization/PublicKeySerializer.hpp"
 
 
 #include "Key.hpp"
