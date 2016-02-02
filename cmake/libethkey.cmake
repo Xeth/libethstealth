@@ -1,4 +1,4 @@
-
+IF(NOT ETHKEY_INCLUDE_PATH)
 IF (WIN32)
     FIND_PATH(ETHKEY_INCLUDE_PATH ethkey/KeyPair.hpp
         $ENV{ETHKEY_INCLUDE_PATH}
@@ -30,7 +30,7 @@ ELSE (WIN32)
         /opt/local/lib
         DOC "The ethkey library")
 ENDIF (WIN32)
-
+ENDIF(NOT ETHKEY_INCLUDE_PATH)
 
 IF (ETHKEY_INCLUDE_PATH)
     SET(ETHKEY_FOUND 1)
