@@ -4,6 +4,6 @@ set (Eth_Stealth_VERSION_MINOR 0)
 set (Eth_Stealth_VERSION_PATCH 0)
 
 configure_file (
-  "${PROJECT_SOURCE_DIR}/src/config.hpp.in"
-  "${PROJECT_BINARY_DIR}/config.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/config.hpp.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/config.hpp"
 )
