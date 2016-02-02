@@ -5,7 +5,7 @@
 #include "ethkey/serialization/PublicKeySerializer.hpp"
 #include "ethkey/encoding/Base58Encoder.hpp"
 
-#include "Address.hpp"
+#include "../Address.hpp"
 
 
 
