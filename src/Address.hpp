@@ -60,6 +60,9 @@ class Address
         const PublicKey & getScanKey() const;
         const std::vector<PublicKey> & getSpendKeys() const;
 
+        std::string toString() const;
+        static Address FromString(const std::string &);
+
     private:
         PublicKey _scanKey;
         std::vector<PublicKey> _spendKeys;

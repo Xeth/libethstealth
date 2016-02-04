@@ -1,5 +1,5 @@
 #include "Address.hpp"
-
+#include "AddressEncoder.hpp"
 
 namespace Ethereum{ namespace Stealth{
 
@@ -67,5 +67,16 @@ const std::vector<PublicKey> & Address::getSpendKeys() const
 }
 
 
+std::string Address::toString() const
+{
+    AddressEncoder encoder;
+    return encoder.encode(*this);
+}
+
+Address Address::FromString(const std::string &str)
+{
+    AddressEncoder encoder;
+    return encoder.decode(str);
+}
 
 }}
