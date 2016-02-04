@@ -1,20 +1,14 @@
 find_package(Boost COMPONENTS system REQUIRED)
+find_package(EthKey REQUIRED)
+find_package(CryptoPP REQUIRED)
+find_package(JsonCPP REQUIRED)
 
-
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/libethkey.cmake)
-include (${CMAKE_CURRENT_SOURCE_DIR}/cmake/cryptopp.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/includes.cmake)
 
 
-IF(ETHKEY_FOUND)
-    MESSAGE(STATUS "EthKey - found")
-ELSE(ETHKEY_FOUND)
-    MESSAGE(FATAL_ERROR "EthKey - not found")
-ENDIF(ETHKEY_FOUND)
-
 #add_definitions(-D__DEBUG__)
 
-include_directories(${CRYPTOPP_INCLUDE_PATH} ${ETHKEY_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${CRYPTOPP_INCLUDE_DIR} ${JSONCPP_INCLUDE_DIR} ${ETHKEY_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 
 file(GLOB SOURCES 
