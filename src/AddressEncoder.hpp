@@ -4,6 +4,6 @@
 
 namespace Ethereum{namespace Stealth{
 
-typedef GenericAddressEncoder<Base58Encoder> Base58AddressEncoder;
+typedef GenericAddressEncoder<Base58Encoder> AddressEncoder;
 
 }}
