@@ -4,7 +4,9 @@ namespace Ethereum{namespace Stealth{
 template<class Cipher>
 Json::Value KeySerializer<Cipher>::serializeToJson(const Key<Cipher> &key) const
 {
+    Address address(key);
     Json::Value json;
+    json["address"] = address.toString();
     json["scan"] = Literal(key.getScanPrivateKey());
     json["version"] = 1;
     json["spend"] = serializeSpendKeys(key);

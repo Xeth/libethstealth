@@ -25,6 +25,7 @@ class Key
 
     public:
 
+        Key();
         Key
         (
             const ScanSecret &scanKey, 
@@ -47,6 +48,7 @@ class Key
 
         const SpendSecretCollection & getSpendPrivateKeys() const;
 
+        Key & operator = (const Key &);
 
     private:
         ScanSecret  _scanKey;
