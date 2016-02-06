@@ -12,6 +12,7 @@
 #include "ethkey/encoding/HexEncoder.hpp"
 
 #include "Key.hpp"
+#include "Literal.hpp"
 
 namespace Ethereum{namespace Stealth{
 
