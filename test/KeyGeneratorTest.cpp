@@ -41,10 +41,10 @@ void validateKeys(const Key<Cipher> &key)
 BOOST_AUTO_TEST_CASE(generateFromEntropy)
 {
     KeyGenerator generator;
-    Key<DummyCipher> key = generator.generate(DummyCipher(), DummyKey(), (const unsigned char *)"0123456789012345678901234567890123456789012345678901234567890123456789", 70);
+    Key<DummyCipher> key = generator.generate((const unsigned char *)"0123456789012345678901234567890123456789012345678901234567890123456789", 70, DummyCipher(), DummyKey());
     validateKeys(key);
 
-    Key<DummyCipher> key2 = generator.generate(DummyCipher(), DummyKey(), (const unsigned char *)"0123456789012345678901234567890123456789012345678901234567890123456789", 70);
+    Key<DummyCipher> key2 = generator.generate((const unsigned char *)"0123456789012345678901234567890123456789012345678901234567890123456789", 70, DummyCipher(), DummyKey());
 
     BOOST_REQUIRE(key.getScanPrivateKey() == key2.getScanPrivateKey());
 //    BOOST_REQUIRE(key.getScanPublicKey() == key2.getScanPublicKey());
@@ -59,7 +59,7 @@ BOOST_AUTO_TEST_CASE(generateFromEntropy)
 BOOST_AUTO_TEST_CASE(invalidEntropy)
 {
     KeyGenerator generator;
-    BOOST_CHECK_THROW(generator.generate(DummyCipher(), DummyKey(), (const unsigned char *)"asd", 3), std::runtime_error);
+    BOOST_CHECK_THROW(generator.generate((const unsigned char *)"asd", 3, DummyCipher(), DummyKey()), std::runtime_error);
 }
 
 BOOST_AUTO_TEST_CASE(generateRandom)

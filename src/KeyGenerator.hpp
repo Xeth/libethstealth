@@ -23,10 +23,10 @@ class KeyGenerator
         Key<Cipher> generate(const Cipher &, const CipherKey &, size_t spendKeys=1);
 
         template<class Cipher, class CipherKey>
-        Key<Cipher> generate(const Cipher &, const CipherKey &, const unsigned char *entropy, size_t entropySize,  size_t spendKeys=1);
+        Key<Cipher> generate(const unsigned char *entropy, size_t entropySize, const Cipher &, const CipherKey &,  size_t spendKeys=1);
 
         template<class Cipher, class CipherKey>
-        Key<Cipher> generate(const Cipher &, const CipherKey &, const Data &entropy,  size_t spendKeys=1);
+        Key<Cipher> generate(const Data &entropy, const Cipher &, const CipherKey &,  size_t spendKeys=1);
 
 
     private:

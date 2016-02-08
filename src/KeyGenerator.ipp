@@ -25,14 +25,14 @@ Key<Cipher> KeyGenerator::generate(const Cipher &cipher, const CipherKey &cipher
 
 
 template<class Cipher, class CipherKey>
-Key<Cipher> KeyGenerator::generate(const Cipher &cipher, const CipherKey &cipherKey, const Data &entropy, size_t spendKeysCount)
+Key<Cipher> KeyGenerator::generate(const Data &entropy, const Cipher &cipher, const CipherKey &cipherKey, size_t spendKeysCount)
 {
     return generate(cipher, cipherKey, &*entropy.begin(), entropy.size(), spendKeysCount);
 }
 
 
 template<class Cipher, class CipherKey>
-Key<Cipher> KeyGenerator::generate(const Cipher &cipher, const CipherKey &cipherKey, const unsigned char *entropy, size_t entropySize, size_t spendKeysCount)
+Key<Cipher> KeyGenerator::generate(const unsigned char *entropy, size_t entropySize, const Cipher &cipher, const CipherKey &cipherKey, size_t spendKeysCount)
 {
 
     checkSpendKeysCount(spendKeysCount);
