@@ -10,6 +10,7 @@ Json::Value KeySerializer<Cipher>::serializeToJson(const Key<Cipher> &key) const
     json["scan"] = Literal(key.getScanPrivateKey());
     json["version"] = 1;
     json["spend"] = serializeSpendKeys(key);
+    json["time"] = (unsigned)time(NULL);
     return json;
 }
 
