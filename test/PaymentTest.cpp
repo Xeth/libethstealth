@@ -2,6 +2,7 @@
 #include <boost/test/unit_test.hpp>
 
 #include "ethkey/cipher/DummyCipher.hpp"
+#include "ethkey/serialization/PublicKeySerializer.hpp"
 
 #include "Address.hpp"
 #include "Literal.hpp"
@@ -41,6 +42,20 @@ BOOST_AUTO_TEST_CASE(uncoverPaymentAddress)
 
     SharedSecret secret;
     BOOST_REQUIRE(resolver.uncover(paymentAddr.getAddresses()[0], paymentAddr.getEphemPublicKey(), secret));
+
+    Key<DummyCipher> key2 = key;
+    PaymentResolver<Key<DummyCipher> > resolver2(key2);
+    SharedSecret secret2;
+    Ethereum::PublicKeySerializer pubSerializer;
+    BOOST_REQUIRE(resolver2.uncover(
+        Ethereum::Address(paymentAddr.getAddresses()[0].toString()), 
+        pubSerializer.unserialize(pubSerializer.serialize(paymentAddr.getEphemPublicKey())),
+        secret2
+    ));
+    
+
+
+    BOOST_REQUIRE(secret == secret2);
 }
 
 
