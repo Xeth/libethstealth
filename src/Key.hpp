@@ -49,6 +49,7 @@ class Key
         const SpendSecretCollection & getSpendPrivateKeys() const;
 
         Key & operator = (const Key &);
+        bool operator == (const Key &) const;
 
     private:
         ScanSecret  _scanKey;

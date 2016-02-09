@@ -35,6 +35,12 @@ Key<Cipher> & Key<Cipher>::operator = (const Key<Cipher> &copy)
 }
 
 template<class Cipher>
+bool Key<Cipher>::operator == (const Key &b) const
+{
+   return _scanKey == b._scanKey && _scanPub == b._scanPub && _spendKeys == b._spendKeys && _spendPub == b._spendPub;
+}
+
+template<class Cipher>
 const PublicKey & Key<Cipher>::getScanPublicKey() const
 {
     return _scanPub;
