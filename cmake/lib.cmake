@@ -3,8 +3,9 @@ find_package(EthKey REQUIRED)
 find_package(CryptoPP REQUIRED)
 find_package(JsonCPP REQUIRED)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/includes.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/CopyHeaders.cmake)
 
+CopyHeaders()
 
 #add_definitions(-D__DEBUG__)
 
