@@ -40,7 +40,7 @@ std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
     *it = static_cast<uint8_t>(spendKeys.size());
     ++it;
 
-    for(int i=0; i<spendKeys.size(); i++)
+    for(size_t i=0; i<spendKeys.size(); i++)
     {
         const PublicKey & spendKey = spendKeys[i];
         CompressedPoint spendKeyPoint = serializer.toCompressedPoint(spendKey);
@@ -110,7 +110,7 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
 
     spendKeys.resize(spendKeysCount);
 
-    for(int i=0; i<spendKeysCount; i++)
+    for(size_t i=0; i<spendKeysCount; i++)
     {
         spendKeys[i] = serializer.fromPoint(it, it+33);
         it += 33;

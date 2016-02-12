@@ -22,7 +22,7 @@ Json::Value KeySerializer<Cipher>::serializeSpendKeys(const Key<Cipher> &key) co
     const std::vector<PublicKey> & pubs = key.getSpendPublicKeys();
     const std::vector<SecuredPrivateKey<Cipher> > & secrets = key.getSpendPrivateKeys();
 
-    for(int i=0; i<pubs.size(); i++)
+    for(size_t i=0; i<pubs.size(); i++)
     {
         Json::Value keyData;
         keyData["pub"] = _pubSerializer.serialize(pubs[i]);

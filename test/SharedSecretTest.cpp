@@ -21,7 +21,7 @@ BOOST_AUTO_TEST_CASE(generate)
     Ethereum::Stealth::SharedSecret secret = secretFactory.createFromScanPublic(scan.getPublicKey(), ephemeral.getPrivateKey());
     Ethereum::Stealth::SharedSecret secret2 = secretFactory.createFromScanSecret(scan.getPrivateKey(), ephemeral.getPublicKey());
 
-    for(int i=0; i<secret.size(); i++)
+    for(size_t i=0; i<secret.size(); i++)
     {
         BOOST_REQUIRE_EQUAL(secret[i], secret2[i]);
     }

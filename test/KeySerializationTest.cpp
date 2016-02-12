@@ -34,7 +34,7 @@ BOOST_AUTO_TEST_CASE(serializeSuccess)
     BOOST_REQUIRE_EQUAL(spendSecrets.size(), spendSecretsCheck.size());
     BOOST_REQUIRE_EQUAL(spendPubs.size(), spendPubsCheck.size());
 
-    for(int i=0; i<spendPubs.size(); i++)
+    for(size_t i=0; i<spendPubs.size(); i++)
     {
         BOOST_REQUIRE(spendPubs[i] == spendPubsCheck[i]);
         BOOST_REQUIRE(spendSecrets[i].getData().data == spendSecretsCheck[i].getData().data);
