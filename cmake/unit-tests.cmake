@@ -8,7 +8,7 @@ file(GLOB TEST_SOURCES
 )
 
 
-include_directories(${CRYPTOPP_INCLUDE_DIR} ${JSONCPP_INCLUDE_DIR} ${ETHKEY_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${Boost_INCLUDE_DIRS} ${CRYPTOPP_INCLUDE_DIR} ${JSONCPP_INCLUDE_DIR} ${ETHKEY_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 add_executable(ethstealth-tests ${TEST_SOURCES})
 add_dependencies(ethstealth-tests ethstealth)
