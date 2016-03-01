@@ -37,7 +37,7 @@ std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
 
     it += 33;
 
-    *it = static_cast<uint8_t>(spendKeys.size());
+    *it = static_cast<unsigned char>(spendKeys.size());
     ++it;
 
     for(size_t i=0; i<spendKeys.size(); i++)
@@ -48,10 +48,10 @@ std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
         it += 33;
     }
 
-    *it = static_cast<uint8_t>(address.getRequiredSignatures());
+    *it = static_cast<unsigned char>(address.getRequiredSignatures());
     ++it;
 
-    *it = static_cast<uint8_t>(prefix.size());
+    *it = static_cast<unsigned char>(prefix.size());
     ++it;
     if(prefix.size())
     {
@@ -59,8 +59,8 @@ std::string GenericAddressEncoder<Encoder>::encode(const Address &address) const
         it += prefix.size();
     }
     DoubleSha256CheckSum checksum;
-    uint32_t checksumResult = checksum(data.begin(), it);
-    uint8_t *checksumPtr = (unsigned char *)&checksumResult;
+    unsigned checksumResult = checksum(data.begin(), it);
+    unsigned char *checksumPtr = (unsigned char *)&checksumResult;
     std::copy(checksumPtr, checksumPtr+4, it);
 
     Encoder encoder;
@@ -85,7 +85,7 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
     std::vector<PublicKey> spendKeys;
     Data prefix;
 
-    uint8_t signatures, version, options, prefixSize, spendKeysCount;
+    unsigned char signatures, version, options, prefixSize, spendKeysCount;
     Data::iterator it = data.begin();
 
     version = *it;
@@ -140,7 +140,7 @@ Address GenericAddressEncoder<Encoder>::decode(const std::string &address) const
         throw std::runtime_error("invalid checksum");
     }
 
-    uint32_t check = *((uint32_t *)&*it);
+    unsigned check = *((unsigned *)&*it);
     DoubleSha256CheckSum checksum;
     if(checksum(data.begin(), it)!=check)
     {

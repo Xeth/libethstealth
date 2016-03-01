@@ -4,7 +4,7 @@
 namespace Ethereum{ namespace Stealth{
 
 
-Address::Address(const PublicKey &scanKey, const std::vector<PublicKey> &spendKeys, size_t signatures, const Data &prefix, uint8_t options, uint8_t version) : 
+Address::Address(const PublicKey &scanKey, const std::vector<PublicKey> &spendKeys, size_t signatures, const Data &prefix, unsigned char options, unsigned char version) : 
     _scanKey(scanKey),
     _spendKeys(spendKeys),
     _version(version),
@@ -13,7 +13,7 @@ Address::Address(const PublicKey &scanKey, const std::vector<PublicKey> &spendKe
     _prefix(prefix)
 {}
 
-Address::Address(const PublicKey &scanKey, const PublicKey &spendKey, const Data &prefix, uint8_t options, uint8_t version) :
+Address::Address(const PublicKey &scanKey, const PublicKey &spendKey, const Data &prefix, unsigned char options, unsigned char version) :
     _scanKey(scanKey),
     _version(version),
     _signatures(1),
@@ -23,7 +23,7 @@ Address::Address(const PublicKey &scanKey, const PublicKey &spendKey, const Data
     _spendKeys.push_back(spendKey);
 }
 
-Address::Address(const PublicKey &scanKey, const PublicKey &spendKey, uint8_t version) :
+Address::Address(const PublicKey &scanKey, const PublicKey &spendKey, unsigned char version) :
     _scanKey(scanKey),
     _version(version),
     _signatures(1),
@@ -35,12 +35,12 @@ Address::Address(const PublicKey &scanKey, const PublicKey &spendKey, uint8_t ve
 
 
 
-uint8_t Address::getVersion() const
+unsigned char Address::getVersion() const
 {
     return _version;
 }
 
-uint8_t Address::getOptions() const
+unsigned char Address::getOptions() const
 {
     return _options;
 }

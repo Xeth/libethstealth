@@ -1,7 +1,5 @@
 #pragma once 
 
-#include <stdint.h>
-
 #include "ethkey/Data.hpp"
 #include "ethkey/PublicKey.hpp"
 #include "Key.hpp"
@@ -27,8 +25,8 @@ class Address
             const Key<Cipher> &, 
             size_t signatures = 0,
             const Data &prefix=Data(),
-            uint8_t options = 0,
-            uint8_t version=DEFAULT_VERSION
+            unsigned char options = 0,
+            unsigned char version=DEFAULT_VERSION
         );
 
         Address
@@ -37,8 +35,8 @@ class Address
             const std::vector<PublicKey> &spendKeys,  
             size_t signatures = 0, 
             const Data &prefix=Data(),
-            uint8_t options = 0,
-            uint8_t version = DEFAULT_VERSION
+            unsigned char options = 0,
+            unsigned char version = DEFAULT_VERSION
         );
 
         Address
@@ -46,14 +44,14 @@ class Address
             const PublicKey &scanKey,
             const PublicKey &spendKey,
             const Data &prefix=Data(),
-            uint8_t options = 0,
-            uint8_t version = DEFAULT_VERSION
+            unsigned char options = 0,
+            unsigned char version = DEFAULT_VERSION
         );
 
-        Address(const PublicKey &scanKey, const PublicKey &spendKey, uint8_t version = DEFAULT_VERSION);
+        Address(const PublicKey &scanKey, const PublicKey &spendKey, unsigned char version = DEFAULT_VERSION);
 
-        uint8_t getVersion() const;
-        uint8_t getOptions() const;
+        unsigned char getVersion() const;
+        unsigned char getOptions() const;
         const Data & getPrefix() const;
         size_t getRequiredSignatures() const;
 
@@ -66,9 +64,9 @@ class Address
     private:
         PublicKey _scanKey;
         std::vector<PublicKey> _spendKeys;
-        uint8_t _version;
+        unsigned char _version;
         size_t _signatures;
-        uint8_t _options;
+        unsigned char _options;
         Data _prefix;
 };
 
