@@ -16,6 +16,6 @@ add_dependencies(ethstealth-tests ethstealth)
 
 target_link_libraries(ethstealth-tests ethstealth ${ETHKEY_LIBRARY} ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY} ${Boost_RANDOM_LIBRARY} ${CRYPTOPP_LIBRARY} ${JSONCPP_LIBRARY})
 
-if(GMP_LIBRARY)
-    target_link_libraries(ethstealth-tests ${GMP_LIBRARY})
+if(GMP_LIBRARIES)
+    target_link_libraries(ethstealth-tests ${GMP_LIBRARIES})
 endif()
