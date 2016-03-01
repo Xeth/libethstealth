@@ -1,6 +1,7 @@
 #pragma once 
 
 #include <string>
+#include <ctime>
 
 #include <json/value.h>
 #include <json/reader.h>
