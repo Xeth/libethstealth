@@ -10,7 +10,11 @@ include(cmake/modules/OSFlags.cmake)
 
 include(cmake/config.cmake)
 include(cmake/lib.cmake)
+
+if(ENABLE_TEST)
 include(cmake/unit-tests.cmake)
+endif()
+
 include(cmake/pkg-config.cmake)
 
 
