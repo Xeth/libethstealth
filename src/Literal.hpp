@@ -1,5 +1,5 @@
 
-#include "ethkey/Literal.hpp"
+#include "ethkey/serialization/Literal.hpp"
 #include "ethkey/encoding/HexEncoder.hpp"
 
 #include "Address.hpp"

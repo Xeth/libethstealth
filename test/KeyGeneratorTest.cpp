@@ -2,10 +2,10 @@
 #include <boost/test/unit_test.hpp>
 
 #include "ethkey/cipher/DummyCipher.hpp"
-#include "ethkey/SignatureValidator.hpp"
 #include "ethkey/hash/Sha256.hpp"
-#include "ethkey/Signer.hpp"
-#include "ethkey/Literal.hpp"
+#include "ethkey/signature/SignatureValidator.hpp"
+#include "ethkey/signature/Signer.hpp"
+#include "ethkey/serialization/Literal.hpp"
 
 #include "KeyGenerator.hpp"
 

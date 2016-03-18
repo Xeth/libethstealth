@@ -1,7 +1,7 @@
 #pragma once 
 
-#include "ethkey/PublicKey.hpp"
-#include "ethkey/PrivateKey.hpp"
+#include "ethkey/key/PublicKey.hpp"
+#include "ethkey/key/PrivateKey.hpp"
 #include "ethkey/hash/Sha256.hpp"
 #include "ethkey/serialization/PublicKeySerializer.hpp"
 

@@ -7,8 +7,8 @@
 #include <json/reader.h>
 #include <json/writer.h>
 
-#include "ethkey/SecuredPrivateKey.hpp"
-#include "ethkey/PublicKey.hpp"
+#include "ethkey/key/SecuredPrivateKey.hpp"
+#include "ethkey/key/PublicKey.hpp"
 #include "ethkey/serialization/PrivateKeySerializer.hpp"
 #include "ethkey/encoding/HexEncoder.hpp"
 

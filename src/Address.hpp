@@ -1,7 +1,6 @@
 #pragma once 
 
-#include "ethkey/Data.hpp"
-#include "ethkey/PublicKey.hpp"
+#include "ethkey/key/PublicKey.hpp"
 #include "Key.hpp"
 
 

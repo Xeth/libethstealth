@@ -1,8 +1,8 @@
 #pragma once 
 
-#include "ethkey/PrivateKey.hpp"
-#include "ethkey/SecuredPrivateKey.hpp"
-#include "ethkey/PublicKey.hpp"
+#include "ethkey/key/PrivateKey.hpp"
+#include "ethkey/key/SecuredPrivateKey.hpp"
+#include "ethkey/key/PublicKey.hpp"
 
 
 namespace Ethereum{namespace Stealth{

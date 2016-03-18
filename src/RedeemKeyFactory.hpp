@@ -1,9 +1,9 @@
 #pragma once 
 
 
-#include "ethkey/KeyPair.hpp"
-#include "ethkey/SecuredKeyPair.hpp"
-#include "ethkey/PublicKeyFactory.hpp"
+#include "ethkey/key/KeyPair.hpp"
+#include "ethkey/key/SecuredKeyPair.hpp"
+#include "ethkey/key/PublicKeyFactory.hpp"
 
 
 #include "SharedSecret.hpp"

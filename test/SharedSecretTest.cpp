@@ -2,7 +2,7 @@
 #include <boost/test/unit_test.hpp>
 
 #include "SharedSecretFactory.hpp"
-#include "ethkey/KeyGenerator.hpp"
+#include "ethkey/key/KeyGenerator.hpp"
 
 using Ethereum::KeyGenerator;
 
