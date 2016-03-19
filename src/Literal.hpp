@@ -1,6 +1,6 @@
 
-#include "ethkey/serialization/Literal.hpp"
-#include "ethkey/encoding/HexEncoder.hpp"
+#include "ethcrypto/serialization/Literal.hpp"
+#include "ethcrypto/encoding/HexEncoder.hpp"
 
 #include "Address.hpp"
 #include "AddressEncoder.hpp"

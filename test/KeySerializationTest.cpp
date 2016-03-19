@@ -1,7 +1,7 @@
 
 #include <boost/test/unit_test.hpp>
 
-#include "ethkey/cipher/DummyCipher.hpp"
+#include "ethcrypto/cipher/DummyCipher.hpp"
 
 #include "Address.hpp"
 #include "Literal.hpp"

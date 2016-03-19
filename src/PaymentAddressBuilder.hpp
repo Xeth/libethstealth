@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "ethkey/key/KeyGenerator.hpp"
+#include "ethcrypto/key/KeyGenerator.hpp"
 
 #include "Address.hpp"
 #include "PaymentAddress.hpp"

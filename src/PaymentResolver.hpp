@@ -1,8 +1,8 @@
 #pragma once 
 
-#include "ethkey/key/Address.hpp"
-#include "ethkey/key/PublicKey.hpp"
-#include "ethkey/key/PublicKeyFactory.hpp"
+#include "ethcrypto/key/Address.hpp"
+#include "ethcrypto/key/PublicKey.hpp"
+#include "ethcrypto/key/PublicKeyFactory.hpp"
 
 #include "SharedSecret.hpp"
 #include "SharedSecretFactory.hpp"

@@ -1,8 +1,8 @@
 #pragma once 
 
-#include "ethkey/checksum/DoubleSha256CheckSum.hpp"
-#include "ethkey/serialization/PublicKeySerializer.hpp"
-#include "ethkey/encoding/Base58Encoder.hpp"
+#include "ethcrypto/checksum/DoubleSha256CheckSum.hpp"
+#include "ethcrypto/serialization/PublicKeySerializer.hpp"
+#include "ethcrypto/encoding/Base58Encoder.hpp"
 
 #include "../Address.hpp"
 

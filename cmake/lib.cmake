@@ -1,5 +1,5 @@
 find_package(Boost COMPONENTS system REQUIRED)
-find_package(EthKey REQUIRED)
+find_package(EthCrypto REQUIRED)
 find_package(CryptoPP REQUIRED)
 find_package(JsonCPP REQUIRED)
 
@@ -9,7 +9,7 @@ CopyHeaders()
 
 #add_definitions(-D__DEBUG__)
 
-include_directories(${Boost_INCLUDE_DIRS} ${CRYPTOPP_INCLUDE_DIR} ${JSONCPP_INCLUDE_DIR} ${ETHKEY_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${Boost_INCLUDE_DIRS} ${CRYPTOPP_INCLUDE_DIR} ${JSONCPP_INCLUDE_DIR} ${ETHCRYPTO_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 
 file(GLOB SOURCES 

@@ -1,8 +1,8 @@
 
 #include <boost/test/unit_test.hpp>
 
-#include "ethkey/cipher/DummyCipher.hpp"
-#include "ethkey/serialization/PublicKeySerializer.hpp"
+#include "ethcrypto/cipher/DummyCipher.hpp"
+#include "ethcrypto/serialization/PublicKeySerializer.hpp"
 
 #include "Address.hpp"
 #include "Literal.hpp"

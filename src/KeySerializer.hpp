@@ -7,10 +7,10 @@
 #include <json/reader.h>
 #include <json/writer.h>
 
-#include "ethkey/key/SecuredPrivateKey.hpp"
-#include "ethkey/key/PublicKey.hpp"
-#include "ethkey/serialization/PrivateKeySerializer.hpp"
-#include "ethkey/encoding/HexEncoder.hpp"
+#include "ethcrypto/key/SecuredPrivateKey.hpp"
+#include "ethcrypto/key/PublicKey.hpp"
+#include "ethcrypto/serialization/PrivateKeySerializer.hpp"
+#include "ethcrypto/encoding/HexEncoder.hpp"
 
 #include "Key.hpp"
 #include "Literal.hpp"

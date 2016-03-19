@@ -1,9 +1,9 @@
 #pragma once 
 
-#include "ethkey/key/PublicKey.hpp"
-#include "ethkey/key/PrivateKey.hpp"
-#include "ethkey/hash/Sha256.hpp"
-#include "ethkey/serialization/PublicKeySerializer.hpp"
+#include "ethcrypto/key/PublicKey.hpp"
+#include "ethcrypto/key/PrivateKey.hpp"
+#include "ethcrypto/hash/Sha256.hpp"
+#include "ethcrypto/serialization/PublicKeySerializer.hpp"
 
 
 #include "Key.hpp"
