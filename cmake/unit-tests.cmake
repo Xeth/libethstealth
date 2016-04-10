@@ -2,7 +2,10 @@ find_package(Boost COMPONENTS system filesystem unit_test_framework random REQUI
 find_package(CryptoPP REQUIRED)
 find_package(EthCrypto REQUIRED)
 find_package(JsonCPP REQUIRED)
-find_package(GMP)
+
+if(ENABLE_GMP)
+    find_package(GMP)
+endif()
 
 file(GLOB TEST_SOURCES 
     "test/*.cpp"
