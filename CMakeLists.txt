@@ -12,11 +12,12 @@ include(cmake/config.cmake)
 include(cmake/lib.cmake)
 
 if(ENABLE_TEST)
-include(cmake/unit-tests.cmake)
+    include(cmake/unit-tests.cmake)
 endif()
 
-include(cmake/pkg-config.cmake)
-
+if(NOT SKIP_LIBRARY_INSTALL)
+    include(cmake/pkg-config.cmake)
+endif()
 
 
 
