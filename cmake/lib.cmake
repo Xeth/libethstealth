@@ -7,17 +7,19 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/CopyHeaders.cmake)
 
 CopyHeaders()
 
-if(${ENABLE_DEBUG})
-    add_definitions(-D__DEBUG__)
-endif()
+#add_definitions(-D__DEBUG__)
+
+include_directories(${Boost_INCLUDE_DIRS} ${CRYPTOPP_INCLUDE_DIR} ${JSONCPP_INCLUDE_DIR} ${ETHCRYPTO_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
 
 file(GLOB SOURCES 
     "src/*.cpp"
 )
 
-add_library(ethstealth STATIC ${SOURCES})
 
-target_include_directories(ethstealth PUBLIC ${Boost_INCLUDE_DIRS} ${CRYPTOPP_INCLUDE_DIR} ${JSONCPP_INCLUDE_DIR} ${ETHCRYPTO_INCLUDE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+add_library(ethstealth STATIC ${SOURCES})
+add_dependencies(ethstealth ethcrypto)
 
 if(NOT SKIP_LIBRARY_INSTALL)
     install(FILES ${HEADERS} DESTINATION include/ethstealth OPTIONAL)
