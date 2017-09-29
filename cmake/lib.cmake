@@ -3,9 +3,10 @@ find_package(EthCrypto REQUIRED)
 find_package(CryptoPP REQUIRED)
 find_package(JsonCPP REQUIRED)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/CopyHeaders.cmake)
 
-CopyHeaders()
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/MakeIncludesLink.cmake)
+
+MakeIncludesLink()
 
 #add_definitions(-D__DEBUG__)
 
@@ -17,7 +18,6 @@ file(GLOB SOURCES
 )
 
 
-
 add_library(ethstealth STATIC ${SOURCES})
 add_dependencies(ethstealth ethcrypto)
 
@@ -26,3 +26,6 @@ if(NOT SKIP_LIBRARY_INSTALL)
     install(FILES config.hpp DESTINATION include/ethstealth OPTIONAL)
     install(TARGETS ethstealth ARCHIVE DESTINATION lib LIBRARY DESTINATION lib RUNTIME DESTINATION bin OPTIONAL)
 endif()
+
+
+set(ETHSTEALTH_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/include PARENT_SCOPE)
