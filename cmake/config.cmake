@@ -7,3 +7,5 @@ configure_file (
   "${CMAKE_CURRENT_SOURCE_DIR}/src/config.hpp.in"
   "${CMAKE_CURRENT_BINARY_DIR}/config.hpp"
 )
+
+#add_definitions(-D__DEBUG__)

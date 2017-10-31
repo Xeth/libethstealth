@@ -9,6 +9,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/mo
 include(cmake/modules/OSFlags.cmake)
 
 include(cmake/config.cmake)
+include(cmake/deps.cmake)
 include(cmake/lib.cmake)
 include(cmake/unit-tests.cmake)
 
